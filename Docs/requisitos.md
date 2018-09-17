@@ -31,7 +31,6 @@ $ sudo apt install Git
 - Angular 2 TypeScript Emmet
 - Angular 6 Snippets - TypeScript, Html, Angular Material, ngRx, RxJS & Flex Layout
 - Angular Language Service
-- Angular v5 Snippets
 - angular2-inline
 - Bootstrap 4, Font awesome 4, Font Awesome 5 Free & Pro snippets
 - HTML CSS Support
