@@ -109,6 +109,15 @@
                 <td>capitalizado:false</td>
                 <td> {{nombre2 | capitalizado:false}} </td>
             </tr>
+            <tr>
+                <td> {{nombre}} </td>
+                <td>
+                    contrasenna:{{activar}}
+                    <br>
+                    <button (click)="activar = !activar" type="button" class="btn btn-outline-primary">Activar/Descactivar</button>
+                </td>
+                <td> {{nombre | contrasenna:activar}} </td>
+            </tr>
 
         </tbody>
     </table>
