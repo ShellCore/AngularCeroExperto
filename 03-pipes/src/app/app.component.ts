@@ -12,4 +12,6 @@ export class AppComponent {
     PI = Math.PI;
 
     a:number = 0.234;
+
+    salario = 1234.5
 }
