@@ -31,4 +31,6 @@ export class AppComponent {
             resolve("Llegó la data");
         }, 3500);
     });
+
+    fecha = new Date();
 }
