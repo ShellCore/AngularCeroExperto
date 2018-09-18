@@ -12,7 +12,10 @@ $ ng new my-app
 $ ng serve -o -p 4200
 
 # Crear un nuevo componente en la carpeta determinada
-# $ ng generate component <carpeta-destino>/<nombre-componente>
+# $ ng generate component components/<nombre-componente>
 $ ng g c components/footer
 
+# Crear un nuevo pipe en la carpeta predeterminada
+# $ ng genetate pipe pipes/<nombre-componente>
+$ ng g p pipes/customPipe
 ```
