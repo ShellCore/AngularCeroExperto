@@ -25,4 +25,10 @@ export class AppComponent {
             estado: 'Arkansas'
         }
     }
+
+    valorDePromesa = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Llegó la data");
+        }, 3500);
+    });
 }
