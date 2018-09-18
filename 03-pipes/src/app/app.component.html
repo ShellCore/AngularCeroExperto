@@ -82,9 +82,21 @@
         </tbody>
     </table>
 
+    <h4>Slice</h4>
     <table>
         <ul>
             <li *ngFor="let item of arreglo | slice:5:20"> {{item}} </li>
         </ul>
     </table>
+
+    <h4>JSON</h4>
+    {{heroe}}
+    <br>
+    <pre> {{heroe | json}} </pre>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 </div>
