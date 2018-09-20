@@ -2,4 +2,4 @@
 
 ## Descripción
 
-En éste repositorio se encuentran los ejercicios realizados en el curso "Angular 2" de la plataforma Plazti
+En éste repositorio se encuentran los ejercicios realizados en el curso "Angular 2" de la plataforma Udemy
