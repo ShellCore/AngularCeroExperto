@@ -10,6 +10,8 @@ export class HomeComponent implements OnInit {
 
     nuevasCanciones: any[] = [];
     loading: boolean;
+    error: boolean = false;
+    errorMgs: string;
 
     constructor(
         private spotify: SpotifyService        
@@ -18,6 +20,11 @@ export class HomeComponent implements OnInit {
         this.spotify.getNewReleases()
             .subscribe((data: any) => {
                 this.nuevasCanciones = data;
+                this.loading = false;
+            }, 
+            (errorMessage) => {
+                this.error = true;
+                this.errorMgs = errorMessage.error.error.message;
                 this.loading = false;
             });
     }
