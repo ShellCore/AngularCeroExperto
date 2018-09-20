@@ -33,7 +33,8 @@
                     <td> {{track.album.name}} </td>
                     <td> {{track.name}} </td>
                     <td>
-                        <audio *ngIf="track.preview_url" [src]="track.preview_url" controls></audio>
+                        <!-- <audio *ngIf="track.preview_url" [src]="track.preview_url" controls></audio> -->
+                        <iframe [src]="track.id | domseguro" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </td>
                 </tr>
             </tbody>
