@@ -14,7 +14,7 @@ export class PendientesPage {
         public deseosService: DeseosService,
         private navCtrl: NavController,
         private alertCtrl: AlertController
-    ) {}
+    ) { }
 
     listaSeleccionada(lista: Lista) {
         this.navCtrl.push(AgregarPage, {
@@ -24,7 +24,7 @@ export class PendientesPage {
     }
 
     agregarLista() {
-        
+
         const alert = this.alertCtrl.create({
             title: 'Nueva lista',
             message: 'Nombre de la nueva lista que desea',
@@ -53,5 +53,9 @@ export class PendientesPage {
         });
 
         alert.present();
+    }
+
+    borrarLista(lista: Lista) {
+        this.deseosService.borrarLista(lista);
     }
 }
