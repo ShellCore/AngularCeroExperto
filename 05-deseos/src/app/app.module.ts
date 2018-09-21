@@ -16,13 +16,17 @@ import { AgregarPage } from '../pages/agregar/agregar.component';
 // Servicios
 import { DeseosService } from '../services/deseos.service';
 
+// Pipes
+import { FiltroCompletadoPipe } from '../pipes/filtro-completado/filtro-completado';
+
 @NgModule({
   declarations: [
     MyApp,
     TabsPage,
     PendientesPage,
     TerminadosPage,
-    AgregarPage
+    AgregarPage,
+    FiltroCompletadoPipe
   ],
   imports: [
     BrowserModule,
