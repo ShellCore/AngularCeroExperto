@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { DeseosService } from '../services/deseos.service';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController, ItemSliding } from 'ionic-angular';
 import { Lista } from '../models/lista.model';
 import { AgregarPage } from '../pages/agregar/agregar.component';
 
@@ -14,7 +14,8 @@ export class ListasComponent {
 
     constructor(
         public deseosService: DeseosService,
-        private navCtrl: NavController
+        private navCtrl: NavController,
+        private alertCtrl: AlertController
     ) { }
 
 
@@ -27,5 +28,38 @@ export class ListasComponent {
 
     borrarLista(lista: Lista) {
         this.deseosService.borrarLista(lista);
+    }
+
+    editarLista(lista: Lista, slidingItem: ItemSliding) {
+
+        slidingItem.close();
+
+        const alert = this.alertCtrl.create({
+            title: 'Editar nombre',
+            message: 'Editar el nombre d ela lista',
+            inputs: [
+                {
+                    name: 'titulo',
+                    placeholder: 'Nombre de la lista',
+                    value: lista.titulo
+                }
+            ],
+            buttons: [
+                {
+                    text: 'Cancelar'
+                },
+                {
+                    text: 'Guardar',
+                    handler: data => {
+                        if (data.titulo.length > 0) {
+                            lista.titulo = data.titulo;
+                            this.deseosService.guardarStorage();
+                        }
+                    }
+                }
+            ]
+        });
+
+        alert.present();
     }
 }
