@@ -32,4 +32,8 @@ export class AgregarPage {
     actualizarTarea(item: ListaItem) {
         item.completado = !item.completado;
     }
+
+    borrar(index: number) {
+        this.lista.items.splice(index, 1);
+    }
 }
