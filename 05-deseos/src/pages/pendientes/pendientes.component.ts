@@ -16,13 +16,6 @@ export class PendientesPage {
         private alertCtrl: AlertController
     ) { }
 
-    listaSeleccionada(lista: Lista) {
-        this.navCtrl.push(AgregarPage, {
-            titulo: lista.titulo,
-            lista: lista
-        });
-    }
-
     agregarLista() {
 
         const alert = this.alertCtrl.create({
@@ -53,9 +46,5 @@ export class PendientesPage {
         });
 
         alert.present();
-    }
-
-    borrarLista(lista: Lista) {
-        this.deseosService.borrarLista(lista);
     }
 }
