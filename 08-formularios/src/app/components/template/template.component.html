@@ -1,6 +1,6 @@
 <h4>Formularios <small>template</small></h4>
 <hr>
-<form (ngSubmit)="guardar(forma)" #forma="ngForm" novalidate>
+<form (ngSubmit)="guardar(forma)" #forma="ngForm" class="was-validated" novalidate>
 
     <div>
 
@@ -9,10 +9,10 @@
             <div class="col-8">
 
                 <input class="form-control" type="text" placeholder="Nombre" name="nombre" [(ngModel)]="usuario.nombre" minlength="5" required #nombre="ngModel">
-                <div *ngIf="nombre.errors?.required">
+                <div *ngIf="nombre.errors?.required" class="invalid-feedback">
                     Este campo es requerido
                 </div>
-                <div *ngIf="nombre.errors?.minlength">
+                <div *ngIf="nombre.errors?.minlength" class="invalid-feedback">
                     Por lo menos {{nombre.errors.minlength.requiredLength}} caracteres
                 </div>
             </div>
@@ -23,7 +23,7 @@
             <div class="col-8">
 
                 <input class="form-control" type="text" placeholder="Apellido" name="apellido" [(ngModel)]="usuario.apellido" required #apellido="ngModel">
-                <div *ngIf="apellido.errors?.required">
+                <div *ngIf="apellido.errors?.required" class="invalid-feedback">
                     Este campo es requerido
                 </div>
             </div>
@@ -36,10 +36,10 @@
         <div class="col-md-8">
 
             <input class="form-control" type="email" placeholder="Correo electrónico" name="correo" [(ngModel)]="usuario.correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required #correo="ngModel">
-            <div *ngIf="correo.errors?.required">
+            <div *ngIf="correo.errors?.required" class="invalid-feedback">
                 Este campo es requerido
             </div>
-            <div *ngIf="correo.errors?.pattern">
+            <div *ngIf="correo.errors?.pattern" class="invalid-feedback">
                 El formato del correo no es válido
             </div>
         </div>
@@ -48,7 +48,7 @@
     <div class="form-group row">
         <label class="col-2 col-form-label">&nbsp;</label>
         <div class="input-group col-md-8">
-            <button type="submit" class="btn btn-outline-primary">
+            <button type="submit" class="btn btn-outline-primary" [disabled]="!forma.valid">
                 Guardar
             </button>
         </div>
