@@ -16,7 +16,8 @@
             </li>
         </ul>
         <span class="navbar-text">
-            <button type="button" class="btn btn-outline-primary" (click)="login()">Login</button>
+            <button type="button" class="btn btn-outline-primary" *ngIf="!auth.isAuthenticated()" (click)="login()">Ingresar</button>
+            <button type="button" class="btn btn-outline-primary" *ngIf="auth.isAuthenticated()" (click)="logout()">Salir</button>
           </span>
     </div>
 </nav>
