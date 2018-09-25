@@ -53,6 +53,10 @@ export class DataComponent {
             console.log(data);
         });
 
+        this.forma.controls['username'].statusChanges.subscribe(data => {
+            console.log(data);
+        });
+
         // this.forma.setValue(this.usuario);
     }
 
