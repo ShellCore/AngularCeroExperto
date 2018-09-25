@@ -49,6 +49,10 @@ export class DataComponent {
             this.noIgual.bind(this.forma)
         ]);
 
+        this.forma.controls['username'].valueChanges.subscribe(data => {
+            console.log(data);
+        });
+
         // this.forma.setValue(this.usuario);
     }
 
