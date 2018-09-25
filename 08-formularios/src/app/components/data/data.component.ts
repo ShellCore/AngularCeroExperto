@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-data',
@@ -38,6 +39,7 @@ export class DataComponent {
             'pasatiempos' : new FormArray([
                 new FormControl('', Validators.required)
             ]),
+            'username': new FormControl('', Validators.required, this.existeUsuario),
             'password1': new FormControl('', Validators.required),
             'password2': new FormControl()
         });
@@ -80,5 +82,19 @@ export class DataComponent {
             return {noiguales: true}
         }
         return null;
+    }
+
+    existeUsuario(control: FormControl) : Promise<any>|Observable<any> {
+        let promesa = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (control.value == "strider") {
+                    resolve({existe: true});
+                } else {
+                    resolve(null);
+                }
+            }, 3000);
+        });
+
+        return promesa;
     }
 }
