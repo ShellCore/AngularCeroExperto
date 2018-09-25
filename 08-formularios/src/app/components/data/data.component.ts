@@ -26,7 +26,10 @@ export class DataComponent {
                     Validators.required,
                     Validators.minLength(3)
                 ]),
-                'apellido': new FormControl('', Validators.required)
+                'apellido': new FormControl('', [
+                    Validators.required,
+                    this.noHerrera
+                ])
             }),
             'correo': new FormControl('', [
                 Validators.required, 
@@ -42,17 +45,24 @@ export class DataComponent {
 
     guardarCambios() {
         console.log(this.forma.value);
-        this.forma.reset({
-            nombreCompleto : {
-                nombre: "",
-                apellido: ""
-            },
-            correo: ""
-        });
+        // this.forma.reset({
+        //     nombreCompleto : {
+        //         nombre: "",
+        //         apellido: ""
+        //     },
+        //     correo: ""
+        // });
     }
 
     agregarPasatiempo() {
         (<FormArray> this.forma.controls['pasatiempos']).push(new FormControl('', Validators.required));
     }
 
+    noHerrera(control: FormControl): {[s:string]: boolean} {
+
+        if (control.value == "herrera") {
+            return {noherrera: true}
+        }
+        return null;
+    }
 }
