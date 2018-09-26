@@ -10,6 +10,7 @@ import { Heroe } from '../../interfaces/heroe.interface';
 export class HeroesComponent implements OnInit {
 
     heroes: any[] = [];
+    loading: boolean = true;
 
     constructor(
         private _service: HeroesService
@@ -24,7 +25,7 @@ export class HeroesComponent implements OnInit {
         this._service.borrarHeroe(key$)
             .subscribe(data => {
                 if (data) {
-                    console.error(respuesta);
+                    console.error(data);
                 } else {
                     delete this.heroes[key$];
                 }
@@ -34,8 +35,12 @@ export class HeroesComponent implements OnInit {
     obtenerHeroes() {
         this._service.obtenerHeroes()
             .subscribe(data => {
-                console.log(data);
                 this.heroes = data;
+                this.loading = false;
+                // setTimeout(() => {
+                //     this.heroes = data;
+                //     this.loading = false;
+                // }, 3000);
             });
     }
 }
