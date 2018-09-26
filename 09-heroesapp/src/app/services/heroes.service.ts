@@ -50,4 +50,16 @@ export class HeroesService {
                 return res.json();
             }));
     }
+
+    obtenerHeroes() {
+        let headers = new Headers({
+            'Content-Type': 'application/json'
+        });
+
+        let url = `${this.firebaseUrl}${this.firebaseUrlJson}`
+        return this.http.get(url, {headers})
+            .pipe(map(res => {
+                return res.json();
+            }));
+    }
 }
