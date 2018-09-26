@@ -18,7 +18,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Casa</th>
-                        <th scope="col">Opciones</th>
+                        <th scope="col" class="text-right">Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,7 +26,10 @@
                         <th scope="row"> {{ i + 1 }} </th>
                         <td> {{heroes[k].nombre}} </td>
                         <td> {{heroes[k].casa}} </td>
-                        <td></td>
+                        <td class="text-right">
+                            <button type="button" class="btn btn-outline-success" [routerLink]="['/heroe', k]">Editar</button>
+                            <button type="button" class="btn btn-outline-danger" (click)="borrarHeroe(k)">Eliminar</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

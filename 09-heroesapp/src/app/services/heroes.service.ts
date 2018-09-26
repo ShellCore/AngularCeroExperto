@@ -62,4 +62,16 @@ export class HeroesService {
                 return res.json();
             }));
     }
+
+    borrarHeroe(key$:string) {
+        let headers = new Headers({
+            'Content-Type': 'application/json'
+        });
+
+        let url = `${this.firebaseUrl}/${key$}${this.firebaseUrlJson}`
+        return this.http.delete(url, {headers})
+            .pipe(map(res => {
+                return res.json();
+            }));
+    }
 }
