@@ -34,6 +34,7 @@ export class ChatService {
     }
     
     logout() {
+        this.usuario = {}
         this.afAuth.auth.signOut();
     }
 
