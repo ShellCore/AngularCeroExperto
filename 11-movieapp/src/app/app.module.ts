@@ -7,6 +7,9 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { DetailComponent } from './components/detail/detail.component';
 
+// Routes
+import { APP_ROUTING } from './app.routes';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +19,8 @@ import { DetailComponent } from './components/detail/detail.component';
     DetailComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    APP_ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]
