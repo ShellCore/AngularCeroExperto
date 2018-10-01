@@ -18,4 +18,21 @@ $ ng g c components/footer
 # Crear un nuevo pipe en la carpeta predeterminada
 # $ ng genetate pipe pipes/<nombre-componente>
 $ ng g p pipes/customPipe
+
+# Crear un nuevo módulo, para el control de los elementos creados (--flat: crealo en el mismo folder, en este caso, raiz)
+# ng generate module <nombre-modulo> --flat
+$ ng g m material --flat
+
+# Cuando existe más de 1 módulo, hay que definir cual es el predeterminado
+$ ng g c components/mapa --module-app=app.module
+
+# No se crea el archivo de pruebas spec.ts
+$ ng g c components/component --spec=false
+
+# No se crea archivo de estilos css
+$ ng g c components/component -is
+
+# No se crea archivo html
+$ ng g c components/component -it
 ```
+
