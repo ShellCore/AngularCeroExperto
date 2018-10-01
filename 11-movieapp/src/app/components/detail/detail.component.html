@@ -1,3 +1,24 @@
-<p>
-  detail works!
-</p>
+<div class="container main-container animated fadeIn fast" *ngIf="pelicula">
+
+    <div class="row">
+        <div class="col-md-5">
+            <img [src]="pelicula|peliculaImagen:true" alt="pelicula.original_title" class="img-thumbnail img-fluid">
+        </div>
+        <div class="col-md-7">
+            <h1> {{pelicula.original_title}} </h1>
+            <hr>
+            <p class="text-justify">
+                {{ pelicula.overview }}
+            </p>
+            <h4>Frase célebre</h4>
+            <p>
+                {{ pelicula.tagline }}
+            </p>
+            <p>
+                <br> Voto: <span class="badge badge-primary"> {{ pelicula.vote_average }} </span>
+            </p>
+            <p>
+            </p>
+        </div>
+    </div>
+</div>

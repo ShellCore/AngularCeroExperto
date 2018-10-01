@@ -40,4 +40,9 @@ export class MoviesService {
             return res.json().results;
         }));
     }
+
+    getPelicula(id: string) {
+        let url = `${this.baseUrl}/movie/${id}?api_key=${this.apiKey}&${this.requiredParams}`;
+        return this.jsonp.get(url).pipe(map(res => res.json()));
+    }
 }

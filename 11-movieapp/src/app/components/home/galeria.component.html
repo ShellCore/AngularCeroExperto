@@ -5,20 +5,20 @@
 <div class="row animated fadeIn fast" *ngIf="peliculas">
     <div class="col-sm-6">
         <div class="row">
-            <div class="col-md-12 div-pic-1" [ngStyle]="{'background-image': 'url(' + (peliculas[0] | peliculaImagen) + ')'}"></div>
+            <div class="col-md-12 div-pic-1 puntero" [ngStyle]="{'background-image': 'url(' + (peliculas[0] | peliculaImagen) + ')'}" [routerLink]="['/detail', peliculas[0].id, 'home']"></div>
         </div>
         <div class="row">
-            <div class="col-sm-6 div-pic-2" [ngStyle]="{'background-image': 'url(' + (peliculas[1] | peliculaImagen) + ')'}"></div>
-            <div class="col-sm-6 div-pic-2" [ngStyle]="{'background-image': 'url(' + (peliculas[2] | peliculaImagen) + ')'}"></div>
+            <div class="col-sm-6 div-pic-2 puntero" [ngStyle]="{'background-image': 'url(' + (peliculas[1] | peliculaImagen) + ')'}" [routerLink]="['/detail', peliculas[1].id, 'home']"></div>
+            <div class="col-sm-6 div-pic-2 puntero" [ngStyle]="{'background-image': 'url(' + (peliculas[2] | peliculaImagen) + ')'}" [routerLink]="['/detail', peliculas[2].id, 'home']"></div>
         </div>
     </div>
     <div class="col-sm-6">
         <div class="row">
-            <div class="col-sm-6 div-pic-2" [ngStyle]="{'background-image': 'url(' + (peliculas[3] | peliculaImagen) + ')'}"></div>
-            <div class="col-sm-6 div-pic-2" [ngStyle]="{'background-image': 'url(' + (peliculas[4] | peliculaImagen) + ')'}"></div>
+            <div class="col-sm-6 div-pic-2 puntero" [ngStyle]="{'background-image': 'url(' + (peliculas[3] | peliculaImagen) + ')'}" [routerLink]="['/detail', peliculas[3].id, 'home']"></div>
+            <div class="col-sm-6 div-pic-2 puntero" [ngStyle]="{'background-image': 'url(' + (peliculas[4] | peliculaImagen) + ')'}" [routerLink]="['/detail', peliculas[4].id, 'home']"></div>
         </div>
         <div class="row">
-            <div class="col-md-12 div-pic-1" [ngStyle]="{'background-image': 'url(' + (peliculas[5] | peliculaImagen) + ')'}"></div>
+            <div class="col-md-12 div-pic-1 puntero" [ngStyle]="{'background-image': 'url(' + (peliculas[5] | peliculaImagen) + ')'}" [routerLink]="['/detail', peliculas[5].id, 'home']"></div>
         </div>
     </div>
 </div>
