@@ -32,7 +32,7 @@ export class SearchComponent implements OnInit {
         }
         this._service.buscarPelicula(this.buscar)
             .subscribe(data => {
-                console.log(data);
+                
             });
     }
 
