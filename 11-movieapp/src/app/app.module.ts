@@ -10,6 +10,7 @@ import { DetailComponent } from './components/detail/detail.component';
 
 // Routes
 import { APP_ROUTING } from './app.routes';
+import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { APP_ROUTING } from './app.routes';
     NavbarComponent,
     HomeComponent,
     SearchComponent,
-    DetailComponent
+    DetailComponent,
+    PeliculaImagenPipe
   ],
   imports: [
     BrowserModule,

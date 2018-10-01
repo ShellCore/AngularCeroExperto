@@ -8,11 +8,14 @@ import { MoviesService } from '../../services/movies.service';
 })
 export class HomeComponent implements OnInit {
 
+    cartelera: any;
+
   constructor(
       public _service: MoviesService
   ) {
       this._service.getCartelera().subscribe(data => {
           console.log(data);
+          this.cartelera = data;
       })
   }
 

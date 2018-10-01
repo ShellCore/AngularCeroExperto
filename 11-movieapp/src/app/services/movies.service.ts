@@ -18,12 +18,17 @@ export class MoviesService {
 
     getCartelera() {
         let url = `${this.baseUrl}/movie/now_playing?api_key=${this.apiKey}&${this.requiredParams}`;
-        return this.jsonp.get(url).pipe(map(res => res.json()));
+        return this.jsonp.get(url).pipe(map(res => res.json().results));
     }
 
     getPopulares() {
         let url = `${this.baseUrl}/movie/popular?&api_key=${this.apiKey}&${this.requiredParams}`;
-        return this.jsonp.get(url).pipe(map(res => res.json()));
+        return this.jsonp.get(url).pipe(map(res => res.json().results));
+    }
+
+    getPopularesNinnos() {
+        let url = `${this.baseUrl}/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api=key=${this.apiKey}&${this.requiredParams}`;
+        return this.jsonp.get(url).pipe(map(res => res.json().results));
     }
 
     buscarPelicula(query: string) {
