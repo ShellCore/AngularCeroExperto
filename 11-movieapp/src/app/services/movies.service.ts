@@ -12,6 +12,8 @@ export class MoviesService {
     private baseUrl = "https://api.themoviedb.org/3";
     private requiredParams = "language=es&callback=JSONP_CALLBACK"
 
+    peliculas : any[] = [];
+
     constructor(
         private jsonp: Jsonp
     ) { }
@@ -33,6 +35,9 @@ export class MoviesService {
 
     buscarPelicula(query: string) {
         let url = `${this.baseUrl}/search/movie?api_key=${this.apiKey}&language=es&query=${query}&callback=JSONP_CALLBACK`;
-        return this.jsonp.get(url).pipe(map(res => res.json()));
+        return this.jsonp.get(url).pipe(map(res => {
+            this.peliculas = res.json().results;
+            return res.json().results;
+        }));
     }
 }

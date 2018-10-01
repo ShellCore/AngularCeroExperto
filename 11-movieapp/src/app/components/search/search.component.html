@@ -1,3 +1,26 @@
-<p>
-  search works!
-</p>
+<div class="container main-container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Buscar:</label>
+                <input type="text" class="form-control" name="buscar" [(ngModel)]="buscar" placeholder="Buscar una película" (keyup.enter)="buscarPelicula()">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="card-columns">
+            <div class="card" *ngFor="let pelicula of _service.peliculas">
+                <img class="card-img-top" [src]="pelicula | peliculaImagen" [alt]="pelicula.original_title">
+                <div class="card-body">
+                    <h5 class="card-title"> {{ pelicula.original_title }} </h5>
+                    <p class="card-text"> {{ pelicula.overview | slice:0:250 }}... </p>
+                    <button type="button" class="btn btn-outline-primary btn-block">
+                        Ver más...
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

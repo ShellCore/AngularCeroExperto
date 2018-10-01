@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpModule, JsonpModule } from '@angular/http';
 
@@ -25,6 +26,7 @@ import { GaleriaComponent } from './components/home/galeria.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpModule,
     JsonpModule,
     APP_ROUTING
