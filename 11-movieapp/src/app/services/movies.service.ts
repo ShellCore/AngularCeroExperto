@@ -27,7 +27,7 @@ export class MoviesService {
     }
 
     getPopularesNinnos() {
-        let url = `${this.baseUrl}/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api=key=${this.apiKey}&${this.requiredParams}`;
+        let url = `${this.baseUrl}/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=${this.apiKey}&${this.requiredParams}`;
         return this.jsonp.get(url).pipe(map(res => res.json().results));
     }
 
