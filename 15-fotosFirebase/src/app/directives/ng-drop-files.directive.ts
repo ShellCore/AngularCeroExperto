@@ -1,10 +1,12 @@
 import { Directive, EventEmitter, ElementRef, HostListener, Input, Output } from '@angular/core';
+import { FileItem } from '../models/file-item';
 
 @Directive({
     selector: '[appNgDropFiles]'
 })
 export class NgDropFilesDirective {
 
+    @Input() archivos: FileItem[] = [];
     @Output() mouseSobre: EventEmitter<boolean> = new EventEmitter();
 
     constructor() { }
@@ -17,5 +19,33 @@ export class NgDropFilesDirective {
     @HostListener('dragleave', ['$event'])
     public onDragLeave(event: any) {
         this.mouseSobre.emit(false);
+    }
+
+    // Validaciones
+    private _preventStop(event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
+    private _fileAlreadyDropped(nombreArchivo: string) : boolean {
+        for (const archivo of this.archivos) {
+            if (archivo.nombreArchivo == nombreArchivo) {
+                console.log(`El archivo ${nombreArchivo} ya está agregado`);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private _isImage(tipoArchivo: string) : boolean {
+        return (tipoArchivo == '' || tipoArchivo == undefined) ? false : tipoArchivo.startsWith('image');
+    }
+
+    private _isFileUploadAvailable(archivo: File) : boolean {
+        if (!this._fileAlreadyDropped(archivo.name) && this._isImage(archivo.type)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
