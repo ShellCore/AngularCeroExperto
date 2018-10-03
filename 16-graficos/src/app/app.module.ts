@@ -9,12 +9,14 @@ import { AppComponent } from './app.component';
 import { ChartsModule } from 'ng2-charts';
 import { LineaComponent } from './components/linea/linea.component';
 import { BarrasComponent } from './components/barras/barras.component';
+import { DonaComponent } from './components/dona/dona.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LineaComponent,
-    BarrasComponent
+    BarrasComponent,
+    DonaComponent
   ],
   imports: [
     BrowserModule,
