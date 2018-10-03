@@ -8,11 +8,13 @@ import { AppComponent } from './app.component';
 // Gráficos
 import { ChartsModule } from 'ng2-charts';
 import { LineaComponent } from './components/linea/linea.component';
+import { BarrasComponent } from './components/barras/barras.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LineaComponent
+    LineaComponent,
+    BarrasComponent
   ],
   imports: [
     BrowserModule,
